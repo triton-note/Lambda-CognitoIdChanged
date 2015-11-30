@@ -23,4 +23,4 @@ def lambda_handler(event, context):
         item[primary] = curValue
         table.put_item(Item=item)
         table.delete_item(Key={primary: preValue, secondary: key})
-    return updates
+    return {'updates': updates}
